@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.H2Dialect
+        </property>
+
+        <property name="hibernate.connection.driver_class">
+            org.h2.Driver
+        </property>
+
+        <!-- Assume test is the database name -->
+        <property name="hibernate.connection.url">
+            jdbc:h2:./Climb
+        </property>
+
+        <property name="hibernate.connection.username">
+
+        </property>
+
+        <property name="hibernate.connection.password">
+
+        </property>
+
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Logging and developer options -->
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
+        <property name="hibernate.generate_statistics">false</property>
+
+        <!-- List of XML mapping files -->
+        <mapping class="org.example.Membership"/>
+        <mapping class="org.example.Gym"/>
+        <mapping class="org.example.Climber"/>
+        <mapping class="org.example.Route"/>
+        <mapping class="org.example.Person"/>
+        <mapping class="org.example.Author"/>
+        <mapping class="org.example.ClimbingLesson"/>
+        <mapping class="org.example.IndividualLesson"/>
+        <mapping class="org.example.GroupLesson"/>
+        <mapping class="org.example.Receptionist"/>
+        <mapping class="org.example.Instructor"/>
+        <mapping class="org.example.ReceptionistAuthor"/>
+
+
+    </session-factory>
+</hibernate-configuration>
